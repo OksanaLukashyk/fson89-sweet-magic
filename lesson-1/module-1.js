@@ -67,7 +67,7 @@
 
 // Напишіть if..else, що відповідає наступному switch:
 
-const browser = 'Opera';
+// const browser = 'Opera';
 
 // switch (browser) {
 //   case 'Edge':
@@ -85,11 +85,51 @@ const browser = 'Opera';
 //     alert('We hope that this page looks ok!');
 // }
 
-if (browser==='Edge') {
-    alert("You've got the Edge!");
-} else if (browser==='Chrome'||browser==='Firefox'||browser==='Safari'||browser==='Opera') {
-    alert('Okay we support these browsers too');
+// if (browser==='Edge') {
+//     alert("You've got the Edge!");
+// } else if (browser==='Chrome'||browser==='Firefox'||browser==='Safari'||browser==='Opera') {
+//     alert('Okay we support these browsers too');
+// }
+// else {
+//     alert('We hope that this page looks ok!');
+// }
+// скористаємося циклом while та виведіть у консоль числа від 0 до 50
+
+// let iterator = 0;
+// while (iterator<=50) {
+//     console.log(iterator);
+//     iterator +=1;
+// }
+// Напишіть цикл, який пропонує ввести
+// число більше 100 через prompt.
+// Якщо відвідувач ввів інше число - попросити
+// ввести ще раз і так далі.
+// Цикл має питати число, поки відвідувач не
+// введе число більше 100, або натисне кнопку
+// скасування в prompt
+// let number = 0;
+// do {
+//     number=prompt("Введіть число більше 100");
+// } while (number<100);
+
+// Не запускає
+// while (false) {
+//     const number=prompt("Введіть число більше 100");
+// }
+
+//Напишіть цикл, який виводить у консоль
+// числа від max до min за спаданням
+// Додайте усі парні числа від min до max
+const min = 45;
+const max = 50;
+let total =0;
+for (let index = max; index >=min; index-=1) {
+  //гарна практика: від поганого
+    if(index%2!==0){
+        continue;
+    }
+    console.log(`Парні: ${index}`);
+        total+=index;
+
 }
-else {
-    alert('We hope that this page looks ok!');
-}
+console.log(`Сума всіх парних чисел в проміжку від ${min} до ${max} складає ${total} `);
