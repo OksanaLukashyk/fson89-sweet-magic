@@ -100,10 +100,10 @@
 // якщо довжина перевищує значення параметрі maxLength.
 
 // function formatMessage(message, maxLength) {
-    // if (message.length > maxLength) {
-    //     return message.slice(0, maxLength) + "...";
-    // }
-    // return message;
+// if (message.length > maxLength) {
+//     return message.slice(0, maxLength) + "...";
+// }
+// return message;
 
 //     return message.length > maxLength ? message.slice(0, maxLength) + "..." : message;
 // }
@@ -112,3 +112,45 @@
 // console.log(formatMessage("Curabitur ligula sapien", 23)); //Повертає 'Curabitur ligula sapien'.
 // console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); //Повертає 'Nunc sed turpis...'.
 // console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'
+
+//TODO:==========Task-7=============
+// Напиши скрипт, який для об'єкта user,
+// Послідовно:
+// 1 додати поле mood зі значенням 'happy'
+// 2 замінити hobby на 'skydiving'
+// 3 замінити значення premium на false
+// 4 виводити вміст об'єкта user у форматі
+// ключ:значення використовуючи Object.keys() і for...of
+
+// const user = {
+//   name: "John",
+//   age: 30,
+//   hobby: "reading",
+//   premium: true,
+//   greet() {
+//     console.log(`Hello ${this.name}`);
+//   },
+// };
+// // user.mood = "happy";
+// user.hobby = "skydiving";
+// user["premium"] = false;
+//console.log(Object.entries(user));
+// for (const key of Object.keys(user)) {
+//   console.log(`${key}: ${user[key]}`);
+// }
+//user.greet();
+
+//TODO:=========task-8=================
+//Потрібно написати функцію, яка приймає 2 параметри obj і key, яка буде перебирати об'єкт.
+//Якщо об'єкт має такий ключ - поверне true
+//Є 2 варіанти рішення, спочатку напишемо функцію, потім вирішимо простим способом
+// const obj = {
+//   name: "Igor",
+//   car: "Mercedes",
+//   carColor: "black",
+// };
+// function getBool(obj, key) {
+//   //return Object.keys(obj).includes(key);
+//   //return key in obj;
+// }
+// console.log(getBool(obj, "car"));
