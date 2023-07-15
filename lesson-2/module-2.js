@@ -43,3 +43,32 @@
 // }
 
 // console.log(caclculateAverage(10, 10, 20, 200, true, "num"));
+
+//TODO:=========task-3=================
+// Напишіть функцію min(a, b), яка повертає
+// менше з чисел a, b
+// Потрібно додати перевірку, що функція отримує числа
+
+// function min(a, b){
+// 	if(typeof a !== 'number'|| typeof b !=='number'){
+// 	return `One of args is not a number`
+// 	}
+// 	return a<b ? a :b;
+
+// }
+// console.log(min(5, 3));
+
+//TODO:=========task-4=================
+// напиши функцію яка сумуватиме сусідні числа і пушити в новий масив
+// const someArr = [22, 11, 34, 5, 12, 13, 14, 15];
+
+// function sumArr (arr){
+// 	const newArr=[];
+
+// for (let index = 0; index < arr.length-1; index+=1) {
+// 	newArr.push(arr[index]+arr[index+1])
+	
+// }
+// return newArr;
+// }
+// console.log(sumArr(someArr));
