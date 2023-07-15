@@ -154,3 +154,51 @@
 //   //return key in obj;
 // }
 // console.log(getBool(obj, "car"));
+
+//TODO:==========task-9=============
+// Напишіть функцію updateObject, яка приймає об'єкт та повертає
+// новий об'єкт без зазначених параметрів
+// Очікуваний результат ({a: 1, b: 2, c: 3}, 'b', 'a') => {c: 3}
+
+// function updateObject(obj, ...removeKeys) {
+//     let newObj = { ...obj }
+//     for (const key of removeKeys) {
+//         delete newObj[key]
+//     }
+//     return newObj;
+// }
+
+// console.log(updateObject({ a: 1, b: 2, c: 3 }, "b", "a"));
+
+//TODO:============task-10================
+// Створіть функцію multiplyNumeric(obj),
+// яка множить всі числові властивості об'єкта obj на 2.
+
+// до виклику функції
+let menu = {
+  width: 200,
+  height: 300,
+  title: 'My menu',
+};
+
+function multiplyNumeric(obj) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === "number") {
+                obj[key] *= 2; 
+            }               
+        }
+    }
+    return obj;
+}
+
+console.log(multiplyNumeric(menu))
+
+// після виклику функції
+// menu = {
+// width: 400,
+// height: 600,
+// title: "My menu"
+// };
+
+
