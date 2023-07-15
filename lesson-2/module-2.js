@@ -67,8 +67,48 @@
 
 // for (let index = 0; index < arr.length-1; index+=1) {
 // 	newArr.push(arr[index]+arr[index+1])
-	
+
 // }
 // return newArr;
 // }
 // console.log(sumArr(someArr));
+
+//TODO:============task-5==============
+//Напишіть функцію logItems(array), яка приймає
+//масив та використовує цикл for, який для кожного
+//елемента масиву виводитиме повідомлення у форматі
+//<номер елемента> - <значення елемента>
+//Нумерація елементів має починатися з першого.
+//['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп']
+
+// const musicGenres = ['Джаз', 'Блюз', 'Рок-н-рол', 'Реггі', 'Реп'];
+
+// function logItems(array) {
+//     for (let index = 0; index < array.length; index+=1) {
+
+//         console.log(`${index + 1} - ${array[index]}`);
+
+//     }
+
+// }
+
+// logItems(musicGenres);
+
+//TODO:=============task-6=================
+// Функція formatMessage(message, maxLength)
+// приймає рядок (параметр message) і форматує його,
+// якщо довжина перевищує значення параметрі maxLength.
+
+// function formatMessage(message, maxLength) {
+    // if (message.length > maxLength) {
+    //     return message.slice(0, maxLength) + "...";
+    // }
+    // return message;
+
+//     return message.length > maxLength ? message.slice(0, maxLength) + "..." : message;
+// }
+
+// console.log(formatMessage("Curabitur ligula sapien", 16)); //Повертає 'Curabitur ligula...'.
+// console.log(formatMessage("Curabitur ligula sapien", 23)); //Повертає 'Curabitur ligula sapien'.
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 15)); //Повертає 'Nunc sed turpis...'.
+// console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41)); //Повертає 'Nunc sed turpis a felis in nunc fringilla'
