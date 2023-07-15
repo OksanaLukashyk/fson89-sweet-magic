@@ -120,16 +120,18 @@
 //Напишіть цикл, який виводить у консоль
 // числа від max до min за спаданням
 // Додайте усі парні числа від min до max
-const min = 45;
-const max = 50;
-let total =0;
-for (let index = max; index >=min; index-=1) {
-  //гарна практика: від поганого
-    if(index%2!==0){
-        continue;
-    }
-    console.log(`Парні: ${index}`);
-        total+=index;
+// const min = 45;
+// const max = 50;
+// let total =0;
+// for (let index = max; index >=min; index-=1) {
+//   //гарна практика: від поганого
+//     if(index%2!==0){
+//         continue;
+//     }
+//     console.log(`Парні: ${index}`);
+//         total+=index;
 
-}
-console.log(`Сума всіх парних чисел в проміжку від ${min} до ${max} складає ${total} `);
+// }
+// console.log(`Сума всіх парних чисел в проміжку від ${min} до ${max} складає ${total} `);
+
+/////////////////////////////////////////////
