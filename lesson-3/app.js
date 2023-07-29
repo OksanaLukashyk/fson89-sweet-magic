@@ -112,3 +112,124 @@
 // console.log(newArray);
 
 
+// 
+//TODO:=========task-01=================
+// Створити об'єкт, який представляє користувача. У об'єкті повинні бути наступні поля: ім'я, прізвище, вік, email та метод, який виводить повну інформацію про користувача.
+
+// const user ={
+//     firstName: "Mark",
+//     lastName: "Chornovil",
+//     age: 26,
+
+//     info() {
+//         console.log(this);
+//     }
+// }
+
+// console.log(user);
+// console.log(user.lastName);
+// console.log(user.info());
+
+// const person = Object.create(user)
+// person.hobby = "football";
+// console.log(person.info());
+
+// const people = Object.create(person);
+// console.log(people.info());
+
+//TODO:=========task-04=================
+//  Викликати метод user.info() таким чином, щоб він вивів результатом  ({name: 'Bob', lactName: 'Lasso',age: 50, email: 'BodLasso@gmail.com'})
+
+// const obj = {
+//     name: 'Bob',
+//     lastName: 'Lasso',
+//     age: 50,
+//   };
+
+// console.log(user.info.call(obj));
+
+//TODO:=========task-05=================
+/**
+  |============Person================
+  | Cтворіть клас `Person`, який містить наступні властивості:
+  |  - `name` - ім'я людини;
+  |  - `age`- вік людини;
+  |  - `gender` - стать людини;
+  |  - `email`- електронна пошта людини.
+  |
+  | ##### Крім того, клас `Person` має мати метод `getDetails()`, який повертає об'єкт з ім'ям, віком, статтю та електронною поштою людини.
+  |============================
+*/
+
+/**
+  |=============Employee===============
+  |Створіть клас `Employee`, який розширює клас `Person` і містить наступні властивості:
+  |  - salary - зарплата співробітника;
+  |  - department - відділ, в якому працює співробітник.
+  |  ##### Крім того, клас `Employee` має мати метод `getEmployeeDetails()`, який повертає об'єкт з ідентифікатором співробітника, зарплатою та відділом, в якому працює співробітник.
+  |============================
+*/
+
+class Person {
+
+    #hobby = "football"
+
+    constructor(name, age, gender, email) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.email = email;
+    }
+
+    getDetails() {
+        return {
+            name: this.name,
+            age: this.age,
+            gender: this.gender,
+            email: this.email,
+        };
+    }
+
+    get hobby() {
+        return this.#hobby
+    }
+}
+
+const person = new Person("Mark", 26, "male", "mark@gmail.com");
+
+
+console.log(person.getDetails());
+
+
+class Employee extends Person {
+
+    static Priority() {
+        return {
+            HIGHT: "hight",
+            LOW: "low"
+        }
+    }
+
+    constructor(name, age, gender, email, salary, department) {
+
+
+        super(name, age, gender, email);
+        this.salary = salary;
+        this.department = department;
+    }
+
+    getEmployeeDetails() {
+      return {
+        ...this.getDetails(),
+        salary: this.salary,
+        department: this.department
+    
+      }
+
+    }
+    
+}
+
+const employee = new Employee("Ira", 30, "female", "ira@gmail.com", 3000, "accountant" )
+console.log(employee.getEmployeeDetails());
+console.log(Employee.Priority().HIGHT);
