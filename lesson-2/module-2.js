@@ -185,8 +185,8 @@
 //     for (const key in obj) {
 //         if (obj.hasOwnProperty(key)) {
 //             if (typeof obj[key] === "number") {
-//                 obj[key] *= 2; 
-//             }               
+//                 obj[key] *= 2;
+//             }
 //         }
 //     }
 //     return obj;
@@ -203,13 +203,13 @@
 
 //TODO:=================task-11=============================
 // Напиши функцію яка приймає масив чисел і повертає новий масив, унікальних чисел, які не повторюються.
-const numbers = [1, 1, 1, 2, 3, 4, 7, 7, 6, 6, 5, 4, 23, 22, 22, 111, 1, 5];
+// const numbers = [1, 1, 1, 2, 3, 4, 7, 7, 6, 6, 5, 4, 23, 22, 22, 111, 1, 5];
 
-function uniqArray(arr) {
-    const uniq = {}
-    for (const number of arr) {
-        uniq[number]=number;
-    }
-    return Object.values(uniq)
-}
-console.log(uniqArray(numbers));
+// function uniqArray(arr) {
+//     const uniq = {}
+//     for (const number of arr) {
+//         uniq[number]=number;
+//     }
+//     return Object.values(uniq)
+// }
+// console.log(uniqArray(numbers));
