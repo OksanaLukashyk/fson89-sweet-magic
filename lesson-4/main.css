@@ -146,3 +146,7 @@ span {
 #circleButton {
   margin-top: 20px;
 }
+
+.watched {
+  opacity: 0.5;
+}
