@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 04</title>
+
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <h1 id="title">Базові операції з DOM</h1>
+
+    <ul class="film-list"></ul>
+
+    <!-- Task - 05 -->
+    <p class="task-title">Task 1</p>
+    <form class="contact-form js-contact-form">
+      <input
+        name="userName"
+        type="text"
+        class="contact-form-input js-username-input"
+        data-length="8"
+        required
+        placeholder="Your name"
+      />
+      <label class="js-policy-label">
+        <input
+          type="checkbox"
+          name="accept"
+          class="contact-form-checkbox js-policy-checkbox"
+        />
+        Я <span class="js-username-output">Anonymous</span> погоджуюсь із
+        політикою конфіденційності
+      </label>
+      <button type="submit" class="contact-form-btn js-contact-form-submit">
+        Відправити
+      </button>
+    </form>
+
+    <!-- Task - 06 -->
+    <p class="task-title">Task 2</p>
+    <div class="input-container">
+      <input class="js-password-input" type="text" />
+      <button class="js-password-button">Приховати</button>
+    </div>
+
+    <!-- Task - 07 -->
+    <p class="task-title">Task 3</p>
+    <div class="eventThumb"></div>
+
+    <!-- Task - 08 -->
+    <p class="task-title">Task 4</p>
+    <div>
+      <div class="box"></div>
+      <button class="js-decrease" id="decrease">Зменьшити</button>
+      <button class="js-increase" id="increase">Збільшити</button>
+    </div>
+
+    <!-- Task - 09 -->
+    <p class="task-title">Task 5</p>
+    <div>
+      <div class="outer-circle">
+        <div class="inner-circle"></div>
+      </div>
+    </div>
+
+    <script type="module" src="./module-6.js"></script>
+  </body>
+</html>
