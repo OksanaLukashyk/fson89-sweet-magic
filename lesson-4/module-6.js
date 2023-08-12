@@ -123,9 +123,25 @@ const films = [
 
 // const watchedFilms = ['film_2', 'film_4', 'film_5'];
 
-// function createMarkup() {}
-
 const watchedFilms = ["film_1", "film_3", "film_5"];
+
+document.addEventListener("DOMContentLoaded", renderFilms);
+
+function createMarkup({ title, imgUrl, id }) {
+  const isWatched = watchedFilms.includes(id);
+  return `
+    <li id="${id}">
+      <img src="${imgUrl}" alt="${title}" class="${
+    isWatched ? "watched" : ""
+  }"/>
+      <p>${title}</p>
+    </li>
+  `;
+}
+function renderFilms() {
+  const markup = films.map((film) => createMarkup(film)).join("");
+  document.querySelector(".film-list").insertAdjacentHTML("beforeend", markup);
+}
 
 //TODO:=========task-05=================
 /**
@@ -144,14 +160,55 @@ const watchedFilms = ["film_1", "film_3", "film_5"];
 
 // find refs
 
-//TODO:===========1===============
-
-//TODO:===========2===============
-
-//TODO:===========3===============
-
-//TODO:===========4===============
+const inputEl = document.querySelector(".js-username-input");
+const form = document.querySelector(".js-contact-form");
 const spanEl = document.querySelector(".js-username-output");
+//TODO:===========1===============
+inputEl.addEventListener("input", () => {
+  if (inputEl.value.length > 6) {
+    inputEl.classList.add("success");
+    inputEl.classList.remove("error");
+  } else {
+    inputEl.classList.remove("success");
+    inputEl.classList.add("error");
+  }
+});
+//TODO:===========2===============
+inputEl.addEventListener("focus", () => {
+  inputEl.value.trim() === "" ?     inputEl.style.outline = "3px solid red" :     inputEl.style.outline = "3px solid green";
+
+  // if (inputEl.value.trim() === "") {
+  //   inputEl.style.outline = "3px solid red";
+  // } else {
+  //   inputEl.style.outline = "3px solid green";
+  // }
+});
+//TODO:===========3===============
+inputEl.addEventListener("blur", () => {
+  inputEl.value.trim() === "" ?     inputEl.style.outline = "3px solid red" :     inputEl.style.outline = "3px solid lime";
+
+})
+//TODO:===========4===============
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const { userName, accept } = event.target.elements;
+
+  if (userName.value && accept.checked ) {
+    const userData = { userName: userName.value}
+
+    console.log(userData);
+
+    userName.value = '';
+    accept.checked = false
+    spanEl.textContent = "Anonymous"
+  } else {
+    alert("Please enter form correctly");
+  }
+})
+
+inputEl.addEventListener("input", ()=>{
+  spanEl.textContent = inputEl.value || "Anonymous";
+})
 
 //TODO:=========task-06=================
 // Кнопка "Приховати" ховає текст і замінює назву кнопки на "Розкрити", у разі повторного натискання текст знову стає доступним і кнопка набуває початкового вигляду.
