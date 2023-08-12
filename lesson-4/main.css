@@ -1,0 +1,148 @@
+.active {
+  color: red;
+}
+
+.number-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.number {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.even {
+  background-color: #8bc34a;
+}
+
+.odd {
+  background-color: #ffeb3b;
+}
+
+.film-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-width: unset;
+  object-fit: cover;
+}
+
+/* tasks styles */
+.task-title {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+button {
+  align-self: center;
+  padding: 10px 26px;
+  cursor: pointer;
+
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.js-password-input {
+  width: 400px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  padding-left: 20px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.eventKey {
+  color: turquoise;
+}
+
+.eventCode {
+  color: tomato;
+}
+
+/* form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+.contact-form-input {
+  height: 40px;
+  border: 1px solid #cccccc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form-btn {
+  margin-top: 20px;
+}
+
+.success {
+  outline: 3px solid greenyellow;
+}
+
+.error {
+  outline: 3px solid red;
+}
+
+span {
+  text-decoration: underline;
+}
+
+/* Box */
+.box {
+  width: 50px;
+  height: 50px;
+  border: 2px dashed red;
+  margin: 10px;
+}
+
+/* circle */
+
+.outer-circle,
+.inner-circle {
+  margin: 0;
+  border-radius: 50%;
+}
+
+.outer-circle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: static;
+}
+
+.inner-circle {
+  width: 30px;
+  height: 30px;
+  background-color: red;
+}
+
+#circleButton {
+  margin-top: 20px;
+}
