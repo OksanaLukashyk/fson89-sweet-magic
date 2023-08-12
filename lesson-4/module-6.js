@@ -212,13 +212,70 @@ inputEl.addEventListener("input", ()=>{
 
 //TODO:=========task-06=================
 // Кнопка "Приховати" ховає текст і замінює назву кнопки на "Розкрити", у разі повторного натискання текст знову стає доступним і кнопка набуває початкового вигляду.
-
+const inputPasword = document.querySelector('.js-password-input');
+const btnEl = document.querySelector('.js-password-button');
+btnEl.addEventListener('click',(evt)=>{
+  
+  if(inputPasword.type === 'text') {
+    inputPasword.type = 'password';
+    btnEl.textContent = "Розкрити";
+  } else {
+    inputPasword.type = 'text';
+    btnEl.textContent = "Приховати";
+  }
+})
 //TODO:=========task-07=================
 // Написати функцію, яка буде створювати список подій клавіатури event.key та event.code
 // Додати класи на список eventList, на елементи eventCode та eventKey
-
+const eventThumb = document.querySelector('.eventThumb');
+document.addEventListener('keydown',({code, key})=> {
+  const markup = `
+  <ul class="eventList">
+      <li class="eventKey"><b>Key</b>:${key} </li>
+      <li class="eventCode"><b>Code</b>:${code} </li>
+    </ul>`
+    eventThumb.insertAdjacentHTML('afterbegin', markup)
+})
 //TODO:=========task-08=================
 // Кнопка "Зменшити" робить квадрат меншим на 20 пікселів, кнопка "Збільшити" - робить більшим на 10 пікселів.
+const decreaseBtn = document.querySelector('.js-decrease');
+const increaseBtn = document.querySelector('.js-increase');
+const boxEl = document.querySelector('.box');
 
+decreaseBtn.addEventListener('click', onBtnClick)
+increaseBtn.addEventListener('click', onBtnClick)
+
+function onBtnClick(evt) {
+  const{offsetWidth}=boxEl
+  const id = evt.target.id
+  if(id === 'decrease'){
+    boxEl.style.width = `${offsetWidth-20}px`
+    boxEl.style.height = `${offsetWidth-20}px`
+  } else {
+    boxEl.style.width = `${offsetWidth+20}px`
+    boxEl.style.height = `${offsetWidth+20}px`
+  }
+  
+}
 //TODO:=========task-08=================
 // При кліку на коло воно має слідувати за курсором. При повторному кліку воно стає в початкове положення.
+const circleEl = document.querySelector('.outer-circle')
+circleEl.addEventListener('click',(evt)=>{
+  const target = evt.currentTarget
+  if(target.style.position==='absolute'){
+    target.style.position = 'static'
+    document.removeEventListener('mousemove',onMouseMove)
+  } else {
+    target.style.position = 'absolute'
+    document.addEventListener('mousemove',onMouseMove)
+  }
+  
+})
+
+function onMouseMove(evt) {
+  // console.log(evt.pageX);
+  let left = evt.pageX
+  let top = evt.pageY
+  circleEl.style.top = `${top-15}px`
+  circleEl.style.left = `${left-15}px`
+}
