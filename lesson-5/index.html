@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson 05</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+
+  <body class="light">
+    <p class="task-title">Модуль 7. Заняття 13. Поширення подій.</p>
+    <!-- Task - 01 -->
+    <section>
+      <div class="container">
+        <p class="task-title">Task 01</p>
+
+        <ul class="accordion-list list js-accordion-list">
+          <li class="accordion-list-item">
+            <button class="accordion js-accordion-btn">Item 1</button>
+            <div class="panel js-panel">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore, labore deleniti ullam esse consequatur voluptatem
+                veritatis, mollitia voluptas voluptatibus quia eveniet veniam,
+                eaque corrupti id iste! Consequuntur temporibus doloribus
+                assumenda!
+              </p>
+            </div>
+          </li>
+
+          <li class="accordion-list-item">
+            <button class="accordion js-accordion-btn">Item 2</button>
+            <div class="panel js-panel">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore, labore deleniti ullam esse consequatur voluptatem
+                veritatis, mollitia voluptas voluptatibus quia eveniet veniam,
+                eaque corrupti id iste! Consequuntur temporibus doloribus
+                assumenda!
+              </p>
+            </div>
+          </li>
+
+          <li class="accordion-list-item">
+            <button class="accordion js-accordion-btn">Item 3</button>
+            <div class="panel js-panel">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore, labore deleniti ullam esse consequatur voluptatem
+                veritatis, mollitia voluptas voluptatibus quia eveniet veniam,
+                eaque corrupti id iste! Consequuntur temporibus doloribus
+                assumenda!
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Task - 02 -->
+    <section>
+      <div class="container">
+        <p class="task-title">Task 02</p>
+
+        <ul class="pagination js-pagination">
+          <li data-type="prev" class="pagination__item">&laquo;</li>
+          <li data-type="page" data-page="1" class="pagination__item active">
+            1
+          </li>
+          <li data-type="page" data-page="2" class="pagination__item">2</li>
+          <li data-type="page" data-page="3" class="pagination__item">3</li>
+          <li data-type="page" data-page="4" class="pagination__item">4</li>
+          <li data-type="page" data-page="5" class="pagination__item">5</li>
+          <li data-type="next" class="pagination__item">&raquo;</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Task - 03 -->
+    <section>
+      <div class="container">
+        <p class="task-title">Task 03</p>
+
+        <button type="button" class="modal-open js-modal-open">
+          Відкрити модалку
+        </button>
+      </div>
+    </section>
+
+    <p class="task-title">Модуль 8. Заняття 16. Local storage</p>
+
+    <!-- Task - 01 -->
+    <section>
+      <div class="container">
+        <p class="task-title">Task 01</p>
+        <h2>Switch</h2>
+        <div class="toggle-switch">
+          <p>Dark</p>
+          <span>
+            <label class="switch">
+              <input id="theme-switch" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </span>
+          <p>Light</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Task - 02 -->
+    <section>
+      <div class="container">
+        <p class="task-title">Task 02</p>
+        <ul class="products-list"></ul>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

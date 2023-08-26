@@ -1,0 +1,324 @@
+:root {
+  --primary: #d81e5b;
+  --secondary: #8a4fff;
+  --grey: #aaa;
+  --light: #eee;
+  --dark: #131a26;
+  --toggle-light: hsl(230, 22%, 74%);
+  --toggle-dark: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Fira sans', sans-serif;
+}
+
+body {
+  background: var(--main-background);
+  color: var(--main-font);
+}
+
+h1,
+h2 {
+  color: var(--dark);
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+section {
+  padding: 50px 0;
+  text-align: center;
+}
+
+p {
+  color: var(--grey);
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* components */
+
+.task-title {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0px 40px;
+}
+
+.module-title {
+  text-align: center;
+}
+
+/* accordion */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+}
+.accordion-list-item {
+  position: relative;
+  transition: all 500ms linear;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+.panel {
+  background-color: white;
+  display: none;
+  padding: 20px;
+  overflow: hidden;
+}
+.panel.active {
+  display: block;
+}
+
+/* pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #eee;
+  margin-top: 1em;
+  padding-top: 0.5em;
+  list-style: none;
+}
+
+.pagination__item {
+  display: block;
+  margin: 0 0.25rem;
+  padding: 0.5em 1em;
+  border: 1px solid #999;
+  border-radius: 0.5em;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination__item.active {
+  background-color: #bfff48;
+  color: #000000;
+}
+
+/* modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 96vw;
+  max-width: 450px;
+  height: 100vh;
+  max-height: 610px;
+  overflow-y: scroll;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+button.modal-open {
+  background-color: #43b581;
+
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+button.modal-open:hover {
+  background-color: #3fb072;
+}
+
+@media screen and (min-width: 1200px) {
+  .modal {
+    max-width: 528px;
+    max-height: 580px;
+  }
+}
+
+/* form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.login-form label {
+  margin-bottom: 16px;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 4px;
+  font: inherit;
+}
+
+.login-btn {
+  background-color: #7289da;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  height: 36px;
+  padding: 8px 16px;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #677bc4;
+}
+
+/* switch */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default html checkbox */
+.switch input {
+  opacity: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-light);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 20px;
+  width: 20px;
+  left: 32px;
+  bottom: 5px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background: linear-gradient(90grad, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+}
+
+input:checked + .slider:before {
+  transform: translateX(-24px);
+}
+.slider,
+.round {
+  border-radius: 34px;
+}
+
+.round::before {
+  border-radius: 50%;
+}
+
+input:checked + .round::before {
+  background-color: hsl(230, 17%, 14%);
+}
+/* /THEME/ */
+.dark {
+  --main-background: hsl(230, 17%, 14%);
+  --main-font: white;
+}
+
+.light {
+  --main-background: white;
+  --main-font: hsl(230, 17%, 14%);
+}
+
+.toggle-switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-switch p {
+  padding: 1em;
+}
+
+/* foods */
+
+.products-list {
+  display: grid;
+  max-width: 1140px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-auto-rows: 240px;
+  grid-gap: 80px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-item {
+  position: relative;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+[data-heart] {
+  cursor: pointer;
+}
+
+.checked {
+  color: red; /* або будь-який інший стиль, який ви хочете застосувати до сердечка улюбленої страви */
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform var(--animation-duration) var(--timing-function);
+}
