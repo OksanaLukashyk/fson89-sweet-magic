@@ -9,7 +9,12 @@
 
 // const listEl = document.querySelector('.js-accordion-list');
 
-// function handleBtnClick(event) {}
+// function handleBtnClick(event) {
+//    if (event.target.nodeName !== "BUTTON") return;
+// event.target.nextElementSibling.classList.toggle("active")
+ 
+  
+// }
 
 // listEl.addEventListener('click', handleBtnClick);
 
