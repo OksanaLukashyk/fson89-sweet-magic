@@ -66,6 +66,14 @@ function handleClick(event) {
   |  - Відображення модельного вікна реалізуй заа допомогою бібліотеки basicLightbox і його метода "basicLightbox.create".
   |============================
 */
+import { onModalOpenClick } from "./js/helpers/onModalOpenClick.js";
+
+const openModalBtn = document.querySelector(".js-modal-open")
+openModalBtn.addEventListener("click", onModalOpenClick)
+
+
+
+
 
 /**
   |============Розмітка для модального вікна================
