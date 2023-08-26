@@ -7,16 +7,16 @@
  * розкритий текст приховується.Нажимаючи на інші елементи меню, попередньо відкриті елементи не закриваються.
  */
 
-// const listEl = document.querySelector('.js-accordion-list');
+const listEl = document.querySelector('.js-accordion-list');
 
-// function handleBtnClick(event) {
-//    if (event.target.nodeName !== "BUTTON") return;
-// event.target.nextElementSibling.classList.toggle("active")
+function handleBtnClick(event) {
+   if (event.target.nodeName !== "BUTTON") return;
+event.target.nextElementSibling.classList.toggle("active")
  
   
-// }
+}
 
-// listEl.addEventListener('click', handleBtnClick);
+listEl.addEventListener('click', handleBtnClick);
 
 //TODO:=========task-02=======Pagination==========
 /**
@@ -24,6 +24,35 @@
  * Використовуй поширення подій.Додавай клас`active` на поточну сторінку. Створи допоміжну функцію`updateActivePage`, яка повинна обновляти активний клас.
  * Функція`handleClick`повинна викликатися коли відбувається клік на елементі`pagination`.
  */
+
+const paginationEl = document.querySelector(".js-pagination");
+
+paginationEl.addEventListener("click", handleClick);
+
+function handleClick(event) {
+  if (event.target.nodeName !== "LI") return;
+
+  const currentBtn =  event.target;
+  const activeBtn = paginationEl.querySelector('.active')
+  
+  if(currentBtn.classList.contains('active')) return;
+  
+  if (currentBtn.dataset.type === "page") {
+    currentBtn.classList.add('active');
+    activeBtn.classList.remove('active');
+    return;
+  }
+  
+  if (currentBtn.dataset.type === "prev" && activeBtn.dataset.page !== "1") {
+    activeBtn.classList.remove('active');
+    activeBtn.previousElementSibling.classList.add('active');
+  }
+
+  if (currentBtn.dataset.type === "next" && activeBtn.dataset.page !== "5") {
+    activeBtn.classList.remove('active');
+    activeBtn.nextElementSibling.classList.add('active');
+  }
+}
 
 //TODO:=========task-03======Modal window===========
 /**
