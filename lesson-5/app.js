@@ -159,7 +159,9 @@ function renderMarkup() {
 
 function toggleFavorite(evt) {
   const heart = evt.target;
+  console.log(heart);
   const card = heart.closet("card-item");
+  console.log(card);
 }
 
 // function setFavoritesOnLoad();
