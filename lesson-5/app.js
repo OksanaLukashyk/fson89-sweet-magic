@@ -150,12 +150,8 @@ function setThemeOnLoad() {
 
 import { products } from "./js/data/products.js";
 import { createMarkup } from "./js/helpers/createMarkup.js";
-// console.log(createMarkup);
-// console.log(products);
-// console.log("products");
 
 document.addEventListener("DOMContentLoaded", renderMarkup);
-// createMarkup(products);
 
 function renderMarkup() {
   createMarkup(products);
