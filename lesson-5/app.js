@@ -156,12 +156,10 @@ document.addEventListener("DOMContentLoaded", renderMarkup);
 function renderMarkup() {
   createMarkup(products);
 }
-
-function toggleFavorite(evt) {
-  const heart = evt.target;
-  console.log(heart);
-  const card = heart.closet("card-item");
-  console.log(card);
+const heartElement = document.querySelector("[data-heart]");
+heartElement.addEventListener("click", toggleFavorite);
+function toggleFavorite() {
+  heartElement.classList.toggle("checked");
 }
 
 // function setFavoritesOnLoad();
