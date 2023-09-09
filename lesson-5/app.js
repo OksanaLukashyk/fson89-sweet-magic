@@ -151,15 +151,60 @@ function setThemeOnLoad() {
 import { products } from "./js/data/products.js";
 import { createMarkup } from "./js/helpers/createMarkup.js";
 
+const FAV_KEY = "favorites";
+
 document.addEventListener("DOMContentLoaded", renderMarkup);
+
+document.addEventListener("DOMContentLoaded", () => {
+  setFavoritesOnLoad();
+  addHeartClickEvent();
+});
 
 function renderMarkup() {
   createMarkup(products);
 }
-const heartElement = document.querySelector("[data-heart]");
-heartElement.addEventListener("click", toggleFavorite);
-function toggleFavorite() {
-  heartElement.classList.toggle("checked");
+
+function getFavorites() {
+  const favorites = JSON.parse(localStorage.getItem(FAV_KEY)) || [];
+  return favorites;
 }
 
-// function setFavoritesOnLoad();
+function setFavorites(favorites) {
+  localStorage.setItem(FAV_KEY, JSON.stringify(favorites));
+}
+
+function setFavoritesOnLoad() {
+  const favorites = getFavorites();
+  const heartElements = document.querySelectorAll("[data-heart]");
+
+  heartElements.forEach((heartElement) => {
+    const id = parseInt(heartElement.closest(".card-item").id);
+    if (favorites.includes(id)) {
+      heartElement.classList.add("checked");
+    }
+  });
+}
+
+function addHeartClickEvent() {
+  const heartElements = document.querySelectorAll("[data-heart]");
+
+  heartElements.forEach((heartElement) => {
+    heartElement.addEventListener("click", () => {
+      const id = parseInt(heartElement.closest(".card-item").id);
+      const favorites = getFavorites();
+
+      if (favorites.includes(id)) {
+        const index = favorites.indexOf(id);
+        if (index !== -1) {
+          favorites.splice(index, 1);
+        }
+        heartElement.classList.remove("checked");
+      } else {
+        favorites.push(id);
+        heartElement.classList.add("checked");
+      }
+
+      setFavorites(favorites);
+    });
+  });
+}
